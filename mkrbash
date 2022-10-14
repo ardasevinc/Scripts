@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+# Author: Arda Sevinç <ardasevinc.technical@gmail.com>
+# Description: Creates a bash script with a random name
+#              for quick testing
+
+function randfilename ()
+{
+    rand=$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c10)
+    echo $rand
+}
+
+name=$(randfilename)
+touch "$name".sh && chmod u+x "$name".sh && echo "created $name".sh
+
+exit 0
+

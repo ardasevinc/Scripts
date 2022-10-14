@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+# Author: Arda Sevinç <ardasevinc.technical@gmail.com>
+# Description: Creates a bash script for quick testing
+
+function usage ()
+{
+    echo "Usage: $(basename $0) PROJECT_NAME"
+}
+
+# Print usage and exit script if no args given
+if [ -z "$1" ]
+then
+    usage
+fi
+
+touch "$1".sh && chmod u+x "$1".sh && echo "created $1".sh
+
+exit 0
+
